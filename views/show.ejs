@@ -1,0 +1,26 @@
+<%- include('partials/header') %>
+
+    <h2>
+        <%= proverb.textDari %>
+    </h2>
+    <p><strong>Pashto:</strong>
+        <%= proverb.textPashto %>
+    </p>
+    <p><strong>English:</strong>
+        <%= proverb.translationEn %>
+    </p>
+    <p><strong>Meaning:</strong>
+        <%= proverb.meaning %>
+    </p>
+    <p><strong>Category:</strong> <span class="badge bg-info">
+            <%= proverb.category %>
+        </span></p>
+
+    <a href="/proverbs/<%= proverb.id %>/edit" class="btn btn-warning mt-3">Edit</a>
+    <form action="/proverbs/<%= proverb.id %>?_method=DELETE" method="POST" class="d-inline">
+        <button class="btn btn-danger mt-3" onclick="return confirm('Are you sure?')">Delete</button>
+    </form>
+
+    <a href="/" class="btn btn-secondary mt-3">Back</a>
+
+    <%- include('partials/footer') %>

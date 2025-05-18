@@ -1,0 +1,33 @@
+<%- include('partials/header') %>
+
+    <h2>Add New Proverb</h2>
+
+    <form action="/proverbs" method="POST">
+        <div class="mb-3">
+            <label>Dari</label>
+            <input type="text" class="form-control" name="textDari" required>
+        </div>
+        <div class="mb-3">
+            <label>Pashto</label>
+            <input type="text" class="form-control" name="textPashto" required>
+        </div>
+        <div class="mb-3">
+            <label>English Translation</label>
+            <input type="text" class="form-control" name="translationEn" required>
+        </div>
+        <div class="mb-3">
+            <label>Meaning</label>
+            <textarea class="form-control" name="meaning" rows="3" required></textarea>
+        </div>
+        <div class="mb-3">
+            <label>Category</label>
+            <select class="form-select" name="category">
+                <option>advice</option>
+                <option>wisdom</option>
+                <option>humor</option>
+            </select>
+        </div>
+        <button class="btn btn-success">Add Proverb</button>
+    </form>
+
+    <%- include('partials/footer') %>

@@ -1,0 +1,32 @@
+<%- include('partials/header') %>
+
+    <!-- Debug: Show raw data -->
+    <pre class="d-none"><%= JSON.stringify(proverbs, null, 2) %></pre>
+
+    <h1 class="mb-4 text-center">All Afghan Proverbs</h1>
+
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+        <% proverbs.forEach(p=> { %>
+            <div class="col">
+                <div class="card shadow-sm h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <%= p.textDari %>
+                        </h5>
+                        <p class="card-text"><strong>Pashto:</strong>
+                            <%= p.textPashto %>
+                        </p>
+                        <p class="card-text"><strong>English:</strong>
+                            <%= p.translationEn || p.translationEnglish %>
+                        </p>
+                        <span class="badge bg-primary">
+                            <%= p.category %>
+                        </span>
+                        <a href="/proverbs/<%= p.id %>" class="btn btn-sm btn-outline-danger mt-2 w-100">See</a>
+                    </div>
+                </div>
+            </div>
+            <% }) %>
+    </div>
+
+    <%- include('partials/footer') %>
